@@ -1,5 +1,6 @@
 import asyncio
-from aiogram import Bot,Dispatcher,types
+from aiogram import Bot,Dispatcher
+
 
 
 
@@ -8,16 +9,14 @@ bot=Bot(token=TOKEN)
 dp=Dispatcher()
 
 
-
-@dp.message()
-async def echo(message: types.Message):
-    await message.answer('бот на отпуске')
+from handlers.user_private import user_router
+dp.include_router(user_router)
 
 
 
 async def main():
     print('Bot has started')
-    await dp.start_polling(bot)
+    await dp.start_polling(bot)             
 
 
 
