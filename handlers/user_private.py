@@ -44,8 +44,8 @@ async def support(message: types.Message):
 
 
 
-@user_router.message(F.text.lower().contains("сто")|
-                     F.text.lower().contains("цен"))
-async def echo(message: types.Message):
-    await message.answer('много')
+# @user_router.message(F.text.lower().contains("сто")|
+#                      F.text.lower().contains("цен"))
+# async def echo(message: types.Message):
+#     await message.answer('много')
 
