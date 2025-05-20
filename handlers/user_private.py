@@ -17,7 +17,7 @@ async def start_bot(message: types.Message):
 @user_router.message(F.text.lower().contains("каталог"))
 @user_router.message(Command("catalog"))
 async def catalog(message: types.Message):
-    await message.answer("Добро пожаловать, выберите раздел:", reply_markup=reply.catalog_kb)
+    await message.answer("""<b>Добро пожаловать</b>, выберите раздел:""", reply_markup=reply.catalog_kb)
 
 
 
@@ -29,7 +29,7 @@ async def catalog(message: types.Message):
 
 @user_router.message(Command("card"))
 async def card(message: types.Message):
-    await message.answer("Ваша корзина:")
+    await message.answer("Ваша корзина:",reply_markup=inline.links_kb)
 
 
 
