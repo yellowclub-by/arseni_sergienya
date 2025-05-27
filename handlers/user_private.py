@@ -21,18 +21,14 @@ async def catalog(message: types.Message):
 
 
 
-# @user_router.message(Command("search"))
-# async def search(message: types.Message):
-#     await message.answer("Введите название медикамента:")
-
-
-
+@user_router.message(F.text.lower().contains("корзина"))
 @user_router.message(Command("card"))
 async def card(message: types.Message):
-    await message.answer("Ваша корзина:",reply_markup=inline.links_kb)
+    await message.answer("Ваша корзина:")
 
 
 
+@user_router.message(F.text.lower().contains("избранное"))
 @user_router.message(Command("favourite"))
 async def favourite(message: types.Message):
     await message.answer("Ваши любимые медикаменты:")
